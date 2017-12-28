@@ -32,7 +32,6 @@ parser.GetLists();
 | Delete_List | DeleteList |
 | Update_Subscriber | UpdateSubscriber |
 | Delete_Subscriber | DeleteSubscriber |
-| Copy_Newsletter | CopyNewsletter |
 
 <br/>
 
