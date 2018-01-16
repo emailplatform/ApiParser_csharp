@@ -153,8 +153,21 @@ parser.GetLists();
 > ```csharp
 > public string ScheduleSendSMS(int campaignid = 0, int[] lists = null, float hours = 0)
 >```
-
 <br />
+
+* **GetSubscribers**
+>  *Previous:*
+> ```csharp
+> public object GetSubscribers(Dictionary<string, string> searchinfo = null, bool countonly = false)
+> 
+>```
+>
+>  *Now:*
+> ```csharp
+> public object GetSubscribers(Dictionary<string, string> searchinfo = null, bool countonly = false, int limit = 1000, int offset = 0)
+> 
+>```
+> * **Added:** limit, offset..
 
 ### _New methods in **v1.1**_ 
 
