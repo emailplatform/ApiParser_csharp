@@ -169,7 +169,7 @@ parser.GetLists();
 >```
 > * **Added:** limit, offset..
 
-### _New methods in **v1.1**_ 
+#### _New methods in **v1.1**_ 
 
 * **UnsubscribeSubscriberMobile**
 >  *Definition:*
@@ -191,6 +191,14 @@ parser.GetLists();
 >  *Definition:*
 > ```csharp
 > public string CopyNewsletter(int newsletterid = 0, string newsletterName = "")
+>```
+
+<br />
+
+* **GetSubscribersUpdatedSince**
+>  *Definition:*
+> ```csharp
+> public object GetSubscribersUpdatedSince(string date = "", int[] lists = null, int limit = 1000, int offset = 0)
 >```
 
 <br />
