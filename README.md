@@ -37,6 +37,19 @@ parser.GetLists();
 
 #### Method definition changed:
 
+* **CopyNewsletter**
+>  *Previous:*
+> ```csharp
+> public string CopyNewsletter(int newsletterid = 0, string newsletterName = "")
+>```
+>
+>  *Now:*
+> ```csharp
+> public string CopyNewsletter(int newsletterid = 0, string newsletterName = "", string subject = "")
+>```
+> * **Added:** subject.
+<br />
+
 * **ActivateSubscriber**
 >  *Previous:*
 > ```csharp
