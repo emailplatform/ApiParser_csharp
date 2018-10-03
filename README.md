@@ -16,7 +16,8 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-parser.GetLists();
+int newsletterid = 1;
+parser.ViewNewsletter(newsletterid);
 ```
 <hr><br />
 
