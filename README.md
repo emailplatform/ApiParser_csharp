@@ -20,9 +20,100 @@ parser.GetLists();
 ```
 <hr><br />
 
-## Release notes
-### _Differences between **v1.0** and **v1.1**_ 
+## Changelog:
+### _Differences between **v1.1.9** and **v1.1.10**_ 
+#### New methods:
+
+* **GetSegmentSummary**
+>  *Definition:*
+> ```csharp
+> public object GetSegmentSummary(int segmentid = 0, string from = "", string to = "")
+> 
+>```
 <br/>
+
+* **GetRulesForSegment**
+>  *Definition:*
+> ```csharp
+> public object GetRulesForSegment(int segmentid = 0)
+> 
+>```
+<br/>
+
+* **EditNewsletter**
+>  *Definition:*
+> ```csharp
+> public object EditNewsletter(int newsletterid = 0, string name = "", string subject = "")
+> 
+>```
+<br/>
+
+* **SetTriggerStatus**
+>  *Definition:*
+> ```csharp
+> public object SetTriggerStatus(int triggerid = 0, bool status = false)
+> 
+>```
+<br/>
+
+* **SetAutoresponderStatus**
+>  *Definition:*
+> ```csharp
+> public object SetAutoresponderStatus(int autoresponderid = 0, bool status = false)
+> 
+>```
+<br/>
+
+### _Differences between **v1.1** and **v1.1.9**_ 
+#### New methods:
+
+* **SendSMS**
+>  *Definition:*
+> ```csharp
+> public string SendSMS(int campaignid = 0, string subject = "", string text = "",  int subscriberid = 0, int listid = 0, string mobile = "", string mobilePrefix = "")
+> 
+>```
+<br/>
+
+* **GetSubscribersFromSegment**
+>  *Definition:*
+> ```csharp
+> public object GetSubscribersFromSegment(int segmentid = 0, bool countonly = false, bool activeonly = true, int limit = 100, int offset = 0)
+> 
+>```
+<br/>
+
+* **GetTriggersForSegment**
+>  *Definition:*
+> ```csharp
+> public object GetTriggersForSegment(int segmentid = 0)
+> 
+>```
+<br/>
+
+* **ViewNewsletter**
+>  *Definition:*
+> ```csharp
+> public object ViewNewsletter(int newsletterid = 0)
+> 
+>```
+<br/>
+
+#### Method definition changed:
+
+* **GetNewsletters**
+>  *Previous:*
+> ```csharp
+> public object GetNewsletters(bool countOnly = false, bool getLastSentDetails = false, bool content = true, string afterCreateDate = "", string newsletterNameLike = "")
+>```
+>  *Now:*
+> ```csharp
+> public object GetNewsletters(bool countOnly = false, bool getLastSentDetails = false, bool content = true, string afterCreateDate = "", string newsletterNameLike = "", int limit = 100, int offset = 0)
+>```
+> * **Added:** $limit & $offset.
+<hr><br/>
+
+### _Differences between **v1.0** and **v1.1**_ 
 
 #### Renamed methods:
 | Old name [v1.0] | New name [v1.1]|
