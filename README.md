@@ -21,11 +21,52 @@ parser.ViewNewsletter(newsletterid);
 ```
 <hr><br />
 
-## Release notes
-### _Differences between **v1.1.8** and **v1.1.9**_ 
+## Changelog:
+### _Differences between **v1.1.9** and **v1.1.10**_ 
+#### New methods:
+
+* **GetSegmentSummary**
+>  *Definition:*
+> ```csharp
+> public object GetSegmentSummary(int segmentid = 0, string from = "", string to = "")
+> 
+>```
 <br/>
 
+* **GetRulesForSegment**
+>  *Definition:*
+> ```csharp
+> public object GetRulesForSegment(int segmentid = 0)
+> 
+>```
+<br/>
 
+* **EditNewsletter**
+>  *Definition:*
+> ```csharp
+> public object EditNewsletter(int newsletterid = 0, string name = "", string subject = "")
+> 
+>```
+<br/>
+
+* **SetTriggerStatus**
+>  *Definition:*
+> ```csharp
+> public object SetTriggerStatus(int triggerid = 0, bool status = false)
+> 
+>```
+<br/>
+
+* **SetAutoresponderStatus**
+>  *Definition:*
+> ```csharp
+> public object SetAutoresponderStatus(int autoresponderid = 0, bool status = false)
+> 
+>```
+<br/>
+
+### _Differences between **v1.1.8** and **v1.1.9**_ 
+<br/>
 #### Method definition changed:
 
 * **GetNewsletters**
