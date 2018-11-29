@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.1.11
+Install-Package ApiParser -Version 1.1.12
 ```
 <hr><br />
 
@@ -22,6 +22,17 @@ parser.ViewNewsletter(newsletterid);
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.1.11** and **v1.1.12**_ 
+#### New methods:
+
+* **GetSubscribersByCustomField**
+>  *Definition:*
+> ```csharp
+> public object GetSubscribersByCustomField(int listid = 0, List<ContactFieldText> data = null, bool countonly = false, int limit = 1000, int offset = 0)
+> 
+>```
+<br/>
+
 ### _Differences between **v1.1.10** and **v1.1.11**_ 
 #### New methods:
 
