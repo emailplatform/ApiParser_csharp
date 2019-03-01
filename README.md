@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.1.11
+Install-Package ApiParser -Version 1.2.2
 ```
 <hr><br />
 
@@ -16,28 +16,32 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-List<ContactFieldText> data = new List<ContactFieldText>();
-
-int listid = 55;
-
-ContactFieldText cont1 = new ContactFieldText();
-cont1.fieldid = 150;
-string[] value1 = new string[] { "Name" };
-cont1.fieldvalue = value1;
-cont1.rule = "OR";
-data.Add(cont1);
-
-ContactFieldText cont2 = new ContactFieldText();
-cont2.fieldid = 151;
-string[] value1 = new string[] { "Last Name" };
-cont2.fieldvalue = value1;
-data.Add(cont2);
-        
-object result = parser.GetSubscribersByCustomField(listid, data);
+int listid = 56;
+int limit = 10;
+object result = parser.GetTriggers(listid, limit);
 ```
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.2.1** and **v1.2.2**_ 
+#### New methods:
+
+* **GetSegments**
+>  *Definition:*
+> ```csharp
+> public object GetSegments(int listid = 0, bool count_subscribers = false, int limit = 1000, int offset = 0)
+> 
+>```
+<br/>
+
+* **GetTriggers**
+>  *Definition:*
+> ```csharp
+> public object GetTriggers(int listid = 0, int limit = 1000, int offset = 0)
+> 
+>```
+<br/>
+
 ### _Differences between **v1.1.11** and **v1.2.1**_ 
 #### New methods:
 
