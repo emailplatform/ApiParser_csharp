@@ -16,12 +16,47 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int newsletterid = 1;
-parser.ViewNewsletter(newsletterid);
+List<ContactFieldText> data = new List<ContactFieldText>();
+
+int listid = 55;
+
+ContactFieldText cont1 = new ContactFieldText();
+cont1.fieldid = 150;
+string[] value1 = new string[] { "Name" };
+cont1.fieldvalue = value1;
+cont1.rule = "OR";
+data.Add(cont1);
+
+ContactFieldText cont2 = new ContactFieldText();
+cont2.fieldid = 151;
+string[] value1 = new string[] { "Last Name" };
+cont2.fieldvalue = value1;
+data.Add(cont2);
+        
+object result = parser.GetSubscribersByCustomField(listid, data);
 ```
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.1.11** and **v1.2.1**_ 
+#### New methods:
+
+* **AddToOTMDocument**
+>  *Definition:*
+> ```csharp
+> public string AddToOTMDocument(int listid = 0, int subscriberid = 0, string emailaddress = "", string mobile = "", string mobilePrefix = "", int fieldid = 0, Dictionary<string, object> values = null, string path = "")
+> 
+>```
+<br/>
+
+* **GetSubscribersByCustomField**
+>  *Definition:*
+> ```csharp
+> public object GetSubscribersByCustomField(int listid = 0, List<ContactFieldText> data = null, bool activeonly = true, bool countonly = false, int limit = 1000, int offset = 0)
+> 
+>```
+<br/>
+
 ### _Differences between **v1.1.10** and **v1.1.11**_ 
 #### New methods:
 
