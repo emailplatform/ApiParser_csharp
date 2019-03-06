@@ -16,9 +16,10 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int listid = 56;
-int limit = 10;
-object result = parser.GetTriggers(listid, limit);
+int listid = 12; 
+String emailaddress = "test@dev.com";
+
+object result = parser.ResubscribeContact(listid, emailaddress);
 ```
 <hr><br />
 
