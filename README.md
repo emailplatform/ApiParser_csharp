@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.3
+Install-Package ApiParser -Version 1.2.4
 ```
 <hr><br />
 
@@ -24,6 +24,33 @@ object result = parser.ResubscribeContact(listid, emailaddress);
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.2.3** and **v1.2.4**_ 
+#### New methods:
+
+* **GetNewsletterSummary**
+>  *Definition:*
+> ```csharp
+> public object GetNewsletterSummary(int newsletterid = 0, int statid = 0, string from = "", string to = "")
+> 
+>```
+<br/>
+
+* **GetStatids**
+>  *Definition:*
+> ```csharp
+> public object GetStatids(int listid = 0, int segmentid = 0, int campaignid = 0, string from = "", string to = "", int limit = 100, int offset = 0)
+> 
+>```
+<br/>
+
+* **GetSnapshots**
+>  *Definition:*
+> ```csharp
+> public object GetSnapshots(int subscriberid = 0, int triggerid = 0, int autoresponderid = 0)
+> 
+>```
+<br/>
+  
 ### _Differences between **v1.2.2** and **v1.2.3**_ 
 #### Method definition changed:
 
