@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.2
+Install-Package ApiParser -Version 1.2.3
 ```
 <hr><br />
 
@@ -16,13 +16,29 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int listid = 56;
-int limit = 10;
-object result = parser.GetTriggers(listid, limit);
+int listid = 12; 
+String emailaddress = "test@dev.com";
+
+object result = parser.ResubscribeContact(listid, emailaddress);
 ```
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.2.2** and **v1.2.3**_ 
+#### Method definition changed:
+
+* **ResubscribeContact**
+>  *Previous:*
+> ```php
+> public string ResubscribeContact(int listid = 0, string emailaddress = "", string mobileNumber = "", string mobilePrefix = "", bool add_to_autoresponders = false)
+>```
+>  *Now:*
+> ```php
+> public string ResubscribeContact(int listid = 0, string emailaddress = "", string mobileNumber = "", string mobilePrefix = "", bool add_to_autoresponders = false, List<ContactFieldText> contactFields = null, List<Dictionary<string, object>> otmValues = null)
+>```
+> * **Added:** contactFields and otmValues.
+<hr><br/>
+
 ### _Differences between **v1.2.1** and **v1.2.2**_ 
 #### New methods:
 
