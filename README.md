@@ -29,12 +29,13 @@ object responce = parser.GetNewsletterSummary(newsletterid);
 * **GetCustomFields**
 >  *Previous:*
 > ```php
-> public object GetCustomFields(int[] lists = null) lists is required
+> public object GetCustomFields(int[] lists = null) 
 >```
 >  *Now:*
 > ```php
-> public object GetCustomFields(int[] lists = null) lists is not required
+> public object GetCustomFields(int[] lists = null) 
 >```
+> * **lists:** is not required.
 <hr><br/>
   
 ### _Differences between **v1.2.3** and **v1.2.4**_ 
