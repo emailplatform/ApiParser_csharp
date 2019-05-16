@@ -23,6 +23,20 @@ object responce = parser.GetNewsletterSummary(newsletterid);
 <hr><br />
 
 ## Changelog:
+### _Differences between **v1.2.4** and **v1.2.5**_ 
+#### Method condition changed:
+
+* **GetCustomFields**
+>  *Previous:*
+> ```php
+> public object GetCustomFields(int[] lists = null) lists is required
+>```
+>  *Now:*
+> ```php
+> public object GetCustomFields(int[] lists = null) lists is not required
+>```
+<hr><br/>
+  
 ### _Differences between **v1.2.3** and **v1.2.4**_ 
 #### New methods:
 
