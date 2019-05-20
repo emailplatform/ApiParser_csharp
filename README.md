@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.4
+Install-Package ApiParser -Version 1.2.5
 ```
 <hr><br />
 
@@ -16,16 +16,22 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int newsletterid = 12; 
-
-object responce = parser.GetNewsletterSummary(newsletterid);
+object responce = parser.GetCustomFields();
 ```
 <hr><br />
 
 ## Changelog:
 ### _Differences between **v1.2.4** and **v1.2.5**_ 
-#### Method condition changed:
+#### New method:
 
+* **LoadCustomField**
+>  *Definition:*
+> ```csharp
+>  public object LoadCustomField(int fieldid = 0, bool return_options = false, bool makeInstance = false)
+> 
+>```
+
+#### Method condition changed:
 * **GetCustomFields**
 >  *Previous:*
 > ```php
