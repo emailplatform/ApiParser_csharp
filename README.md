@@ -16,7 +16,7 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-object responce = parser.GetCustomFields();
+object responce = parser.GetLeadScore(150);
 ```
 <hr><br />
 
