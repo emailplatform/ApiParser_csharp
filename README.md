@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.5
+Install-Package ApiParser -Version 1.2.6
 ```
 <hr><br />
 
@@ -16,9 +16,28 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-object responce = parser.GetCustomFields();
+object responce = parser.GetLeadScore(150);
 ```
 <hr><br />
+
+## Changelog:
+### _Differences between **v1.2.5** and **v1.2.6**_ 
+#### New methods:
+
+* **GetLeadScore**
+>  *Definition:*
+> ```csharp
+> public object GetLeadScore(int subscriberid = 0)
+> 
+>```
+<br/>
+
+* **SetLeadScore**
+>  *Definition:*
+> ```csharp
+> public object SetLeadScore(int subscriberid = 0, int? leadScore = null, string type = "add")
+> 
+>```
 
 ## Changelog:
 ### _Differences between **v1.2.4** and **v1.2.5**_ 
