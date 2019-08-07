@@ -16,7 +16,9 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-object responce = parser.GetLeadScore(150);
+int listid = 20;
+int subscriberid = 150;
+object responce = parser.GetTrackingEvents(listid, subscriberid);
 ```
 <hr><br />
 
