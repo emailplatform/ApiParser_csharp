@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.7
+Install-Package ApiParser -Version 1.2.8
 ```
 <hr><br />
 
@@ -21,6 +21,11 @@ int subscriberid = 150;
 object responce = parser.GetTrackingEvents(listid, subscriberid);
 ```
 <hr><br />
+
+## Changelog:
+### _Differences between **v1.2.7** and **v1.2.8**_ 
+#### Update on memory objects:
+
 
 ## Changelog:
 ### _Differences between **v1.2.6** and **v1.2.7**_ 
