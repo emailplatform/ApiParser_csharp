@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.8
+Install-Package ApiParser -Version 1.2.9
 ```
 <hr><br />
 
@@ -16,13 +16,25 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int listid = 20;
-int subscriberid = 150;
-object responce = parser.GetTrackingEvents(listid, subscriberid);
+int campaignid = 20;
+bool saveSnapshots = true;
+string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.8** and **v1.2.9**_ 
+#### Method definition changed:
+
+* **ScheduleSendNewsletter**
+>  *Definition:*
+> ```php
+>  public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
+>```
+<br>
+
+
 ### _Differences between **v1.2.7** and **v1.2.8**_ 
 #### Update on memory objects:
 
