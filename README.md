@@ -32,6 +32,72 @@ string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
 > ```php
 >  public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
 >```
+
+#### New methods:
+
+* **GetSentEmailCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentEmailCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenTriggersEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenTriggersEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickTriggersEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickTriggersEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetSentAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetSentSMSCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentSMSCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
 <br>
 
 
