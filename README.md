@@ -16,9 +16,9 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int campaignid = 20;
-bool saveSnapshots = true;
-string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
+string from = "15.10.2019";
+string to = "01.11.2019";
+string responce = parser.GetSentEmailCampaignEvents(from, to);
 ```
 <hr><br />
 
