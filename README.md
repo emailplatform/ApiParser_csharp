@@ -27,11 +27,18 @@ string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
 ### _Differences between **v1.2.8** and **v1.2.9**_ 
 #### Method definition changed:
 
+
 * **ScheduleSendNewsletter**
->  *Definition:*
-> ```php
->  public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
+>  *Previous:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0)
 >```
+>  *Now:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
+>```
+> * **Added:** saveSnapshots
+<br>
 
 #### New methods:
 
@@ -116,7 +123,7 @@ string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
 > 
 >```
 
-## Changelog:
+
 ### _Differences between **v1.2.5** and **v1.2.6**_ 
 #### New methods:
 
