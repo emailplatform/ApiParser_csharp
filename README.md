@@ -155,6 +155,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 >  public object LoadCustomField(int fieldid = 0, bool return_options = false, bool makeInstance = false)
 > 
 >```
+<br>
 
 #### Method condition changed:
 
