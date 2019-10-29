@@ -119,7 +119,6 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 #### Update on memory objects:
 
 
-## Changelog:
 ### _Differences between **v1.2.6** and **v1.2.7**_ 
 #### New method:
 
@@ -149,7 +148,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > 
 >```
 
-## Changelog:
+
 ### _Differences between **v1.2.4** and **v1.2.5**_ 
 #### New method:
 
