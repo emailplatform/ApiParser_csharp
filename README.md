@@ -49,6 +49,13 @@ string responce = parser.ScheduleSendNewsletter(campaignid, 0, saveSnapshots);
 > 
 >```
 
+* **GetSentEmailCampaignWithTriggerEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentEmailCampaignWithTriggerEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
 * **GetOpenCampaignEvents**
 >  *Definition:*
 > ```csharp
