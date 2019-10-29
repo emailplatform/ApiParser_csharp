@@ -27,7 +27,6 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 ### _Differences between **v1.2.8** and **v1.2.9**_ 
 #### Method definition changed:
 
-
 * **ScheduleSendNewsletter**
 >  *Previous:*
 > ```csharp
@@ -111,13 +110,11 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public string GetSentSMSCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
 > 
 >```
-
-<br>
-
+<hr><br>
 
 ### _Differences between **v1.2.7** and **v1.2.8**_ 
 #### Update on memory objects:
-
+<hr><br>
 
 ### _Differences between **v1.2.6** and **v1.2.7**_ 
 #### New method:
@@ -128,7 +125,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetTrackingEvents(int listid = 0, int subscriberid = 0, int limit = 100, int offset = 0)
 > 
 >```
-
+<hr><br>
 
 ### _Differences between **v1.2.5** and **v1.2.6**_ 
 #### New methods:
@@ -139,7 +136,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetLeadScore(int subscriberid = 0)
 > 
 >```
-<br/>
+<br>
 
 * **SetLeadScore**
 >  *Definition:*
@@ -147,7 +144,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object SetLeadScore(int subscriberid = 0, int? leadScore = null, string type = "add")
 > 
 >```
-
+<hr><br>
 
 ### _Differences between **v1.2.4** and **v1.2.5**_ 
 #### New method:
@@ -160,6 +157,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 >```
 
 #### Method condition changed:
+
 * **GetCustomFields**
 >  *Previous:*
 > ```php
@@ -170,7 +168,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetCustomFields(int[] lists = null) 
 >```
 > * **lists:** is not required.
-<hr><br/>
+<hr><br>
   
 ### _Differences between **v1.2.3** and **v1.2.4**_ 
 #### New methods:
@@ -181,7 +179,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetNewsletterSummary(int newsletterid = 0, int statid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetStatids**
 >  *Definition:*
@@ -189,7 +187,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetStatids(int listid = 0, int segmentid = 0, int campaignid = 0, string from = "", string to = "", int limit = 100, int offset = 0)
 > 
 >```
-<br/>
+<br>
 
 * **GetSnapshots**
 >  *Definition:*
@@ -197,7 +195,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetSnapshots(int subscriberid = 0, int triggerid = 0, int autoresponderid = 0)
 > 
 >```
-<br/>
+<hr><br>
   
 ### _Differences between **v1.2.2** and **v1.2.3**_ 
 #### Method definition changed:
@@ -212,7 +210,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public string ResubscribeContact(int listid = 0, string emailaddress = "", string mobileNumber = "", string mobilePrefix = "", bool add_to_autoresponders = false, List<ContactFieldText> contactFields = null, List<Dictionary<string, object>> otmValues = null)
 >```
 > * **Added:** contactFields and otmValues.
-<hr><br/>
+<hr><br>
 
 ### _Differences between **v1.2.1** and **v1.2.2**_ 
 #### New methods:
@@ -223,7 +221,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetSegments(int listid = 0, bool count_subscribers = false, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<br>
 
 * **GetTriggers**
 >  *Definition:*
@@ -231,7 +229,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetTriggers(int listid = 0, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.11** and **v1.2.1**_ 
 #### New methods:
@@ -242,7 +240,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public string AddToOTMDocument(int listid = 0, int subscriberid = 0, string emailaddress = "", string mobile = "", string mobilePrefix = "", int fieldid = 0, Dictionary<string, object> values = null, string path = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetSubscribersByCustomField**
 >  *Definition:*
@@ -250,7 +248,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetSubscribersByCustomField(int listid = 0, List<ContactFieldText> data = null, bool activeonly = true, bool countonly = false, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.10** and **v1.1.11**_ 
 #### New methods:
@@ -261,7 +259,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetTriggerSummary(int triggerid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetAutoresponderSummary**
 >  *Definition:*
@@ -269,7 +267,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetAutoresponderSummary(int autoresponderid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.9** and **v1.1.10**_ 
 #### New methods:
@@ -280,7 +278,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetSegmentSummary(int segmentid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetRulesForSegment**
 >  *Definition:*
@@ -288,7 +286,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetRulesForSegment(int segmentid = 0)
 > 
 >```
-<br/>
+<br>
 
 * **EditNewsletter**
 >  *Definition:*
@@ -296,7 +294,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object EditNewsletter(int newsletterid = 0, string name = "", string subject = "")
 > 
 >```
-<br/>
+<br>
 
 * **SetTriggerStatus**
 >  *Definition:*
@@ -304,7 +302,7 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object SetTriggerStatus(int triggerid = 0, bool status = false)
 > 
 >```
-<br/>
+<br>
 
 * **SetAutoresponderStatus**
 >  *Definition:*
@@ -312,10 +310,9 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object SetAutoresponderStatus(int autoresponderid = 0, bool status = false)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.8** and **v1.1.9**_ 
-<br/>
 #### Method definition changed:
 
 * **GetNewsletters**
@@ -329,39 +326,34 @@ string responce = parser.GetSentEmailCampaignEvents(from, to);
 > public object GetNewsletters(bool countOnly = false, bool getLastSentDetails = false, bool content = true, string afterCreateDate = "", string newsletterNameLike = "", int limit = 100, int offset = 0)
 >```
 > * **Added:** limit & offset.
-<br />
+<br>
 
-
-#### _New methods in **v1.1.9**_ 
+#### New methods:
 
 * **SendSMS**
 >  *Definition:*
 > ```csharp
 > public string SendSMS(int campaignid = 0, string subject = "", string text = "",  int subscriberid = 0, int listid = 0, string mobile = "", string mobilePrefix = "")
 >```
-
-<br />
+<br>
 
 * **GetSubscribersFromSegment**
 >  *Definition:*
 > ```csharp
 > public object GetSubscribersFromSegment(int segmentid = 0, bool countonly = false, bool activeonly = true, int limit = 100, int offset = 0)
 >```
-
-<br />
+<br>
 
 * **ViewNewsletter**
 >  *Definition:*
 > ```csharp
 > public object ViewNewsletter(int newsletterid = 0)
 >```
-
-<br />
+<br>
 
 * **GetTriggersForSegment**
 >  *Definition:*
 > ```csharp
 > public object GetTriggersForSegment(int segmentid = 0)
 >```
-
-<br />
+<br>
