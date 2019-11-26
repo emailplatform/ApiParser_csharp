@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.8
+Install-Package ApiParser -Version 1.2.10
 ```
 <hr><br />
 
@@ -16,18 +16,123 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int listid = 20;
-int subscriberid = 150;
-object responce = parser.GetTrackingEvents(listid, subscriberid);
+int newsletterid = 19;
+int[] listids = new int[]{10,12};
+string responce = parser.ScheduleSendNewsletterToLists(newsletterid, 0, listids);
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.9** and **v1.2.10**_ 
+#### New methods:
+
+* **ScheduleSendNewsletterToLists**
+>  *Definition:*
+> ```csharp
+> public string ScheduleSendNewsletterToLists(int campaignid = 0, float hours = 0, int[] listids = null)
+> 
+>```
+
+* **ScheduleSendNewsletterToSegments**
+>  *Definition:*
+> ```csharp
+> public string ScheduleSendNewsletterToSegments(int campaignid = 0, float hours = 0, int[] segmentids = null)
+> 
+>```
+
+### _Differences between **v1.2.8** and **v1.2.9**_ 
+#### Method definition changed:
+
+* **ScheduleSendNewsletter**
+>  *Previous:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0)
+>```
+>  *Now:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
+>```
+> * **Added:** saveSnapshots
+<br>
+
+#### New methods:
+
+* **GetSentEmailCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentEmailCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetSentEmailCampaignWithTriggerEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentEmailCampaignWithTriggerEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenTriggersEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenTriggersEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickTriggersEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickTriggersEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetSentAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetOpenAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetOpenAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetLinkClickAutoresponderEvents**
+>  *Definition:*
+> ```csharp
+> public string GetLinkClickAutoresponderEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+
+* **GetSentSMSCampaignEvents**
+>  *Definition:*
+> ```csharp
+> public string GetSentSMSCampaignEvents(string from = "", string to = "", int limit = 10, int offset = 0)
+> 
+>```
+<hr><br>
+
 ### _Differences between **v1.2.7** and **v1.2.8**_ 
 #### Update on memory objects:
+<hr><br>
 
-
-## Changelog:
 ### _Differences between **v1.2.6** and **v1.2.7**_ 
 #### New method:
 
@@ -37,8 +142,8 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetTrackingEvents(int listid = 0, int subscriberid = 0, int limit = 100, int offset = 0)
 > 
 >```
+<hr><br>
 
-## Changelog:
 ### _Differences between **v1.2.5** and **v1.2.6**_ 
 #### New methods:
 
@@ -48,7 +153,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetLeadScore(int subscriberid = 0)
 > 
 >```
-<br/>
+<br>
 
 * **SetLeadScore**
 >  *Definition:*
@@ -56,8 +161,8 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object SetLeadScore(int subscriberid = 0, int? leadScore = null, string type = "add")
 > 
 >```
+<hr><br>
 
-## Changelog:
 ### _Differences between **v1.2.4** and **v1.2.5**_ 
 #### New method:
 
@@ -67,8 +172,10 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 >  public object LoadCustomField(int fieldid = 0, bool return_options = false, bool makeInstance = false)
 > 
 >```
+<br>
 
 #### Method condition changed:
+
 * **GetCustomFields**
 >  *Previous:*
 > ```php
@@ -79,7 +186,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetCustomFields(int[] lists = null) 
 >```
 > * **lists:** is not required.
-<hr><br/>
+<hr><br>
   
 ### _Differences between **v1.2.3** and **v1.2.4**_ 
 #### New methods:
@@ -90,7 +197,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetNewsletterSummary(int newsletterid = 0, int statid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetStatids**
 >  *Definition:*
@@ -98,7 +205,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetStatids(int listid = 0, int segmentid = 0, int campaignid = 0, string from = "", string to = "", int limit = 100, int offset = 0)
 > 
 >```
-<br/>
+<br>
 
 * **GetSnapshots**
 >  *Definition:*
@@ -106,7 +213,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetSnapshots(int subscriberid = 0, int triggerid = 0, int autoresponderid = 0)
 > 
 >```
-<br/>
+<hr><br>
   
 ### _Differences between **v1.2.2** and **v1.2.3**_ 
 #### Method definition changed:
@@ -121,7 +228,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public string ResubscribeContact(int listid = 0, string emailaddress = "", string mobileNumber = "", string mobilePrefix = "", bool add_to_autoresponders = false, List<ContactFieldText> contactFields = null, List<Dictionary<string, object>> otmValues = null)
 >```
 > * **Added:** contactFields and otmValues.
-<hr><br/>
+<hr><br>
 
 ### _Differences between **v1.2.1** and **v1.2.2**_ 
 #### New methods:
@@ -132,7 +239,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetSegments(int listid = 0, bool count_subscribers = false, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<br>
 
 * **GetTriggers**
 >  *Definition:*
@@ -140,7 +247,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetTriggers(int listid = 0, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.11** and **v1.2.1**_ 
 #### New methods:
@@ -151,7 +258,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public string AddToOTMDocument(int listid = 0, int subscriberid = 0, string emailaddress = "", string mobile = "", string mobilePrefix = "", int fieldid = 0, Dictionary<string, object> values = null, string path = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetSubscribersByCustomField**
 >  *Definition:*
@@ -159,7 +266,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetSubscribersByCustomField(int listid = 0, List<ContactFieldText> data = null, bool activeonly = true, bool countonly = false, int limit = 1000, int offset = 0)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.10** and **v1.1.11**_ 
 #### New methods:
@@ -170,7 +277,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetTriggerSummary(int triggerid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetAutoresponderSummary**
 >  *Definition:*
@@ -178,7 +285,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetAutoresponderSummary(int autoresponderid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.9** and **v1.1.10**_ 
 #### New methods:
@@ -189,7 +296,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetSegmentSummary(int segmentid = 0, string from = "", string to = "")
 > 
 >```
-<br/>
+<br>
 
 * **GetRulesForSegment**
 >  *Definition:*
@@ -197,7 +304,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetRulesForSegment(int segmentid = 0)
 > 
 >```
-<br/>
+<br>
 
 * **EditNewsletter**
 >  *Definition:*
@@ -205,7 +312,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object EditNewsletter(int newsletterid = 0, string name = "", string subject = "")
 > 
 >```
-<br/>
+<br>
 
 * **SetTriggerStatus**
 >  *Definition:*
@@ -213,7 +320,7 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object SetTriggerStatus(int triggerid = 0, bool status = false)
 > 
 >```
-<br/>
+<br>
 
 * **SetAutoresponderStatus**
 >  *Definition:*
@@ -221,10 +328,9 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object SetAutoresponderStatus(int autoresponderid = 0, bool status = false)
 > 
 >```
-<br/>
+<hr><br>
 
 ### _Differences between **v1.1.8** and **v1.1.9**_ 
-<br/>
 #### Method definition changed:
 
 * **GetNewsletters**
@@ -238,39 +344,34 @@ object responce = parser.GetTrackingEvents(listid, subscriberid);
 > public object GetNewsletters(bool countOnly = false, bool getLastSentDetails = false, bool content = true, string afterCreateDate = "", string newsletterNameLike = "", int limit = 100, int offset = 0)
 >```
 > * **Added:** limit & offset.
-<br />
+<br>
 
-
-#### _New methods in **v1.1.9**_ 
+#### New methods:
 
 * **SendSMS**
 >  *Definition:*
 > ```csharp
 > public string SendSMS(int campaignid = 0, string subject = "", string text = "",  int subscriberid = 0, int listid = 0, string mobile = "", string mobilePrefix = "")
 >```
-
-<br />
+<br>
 
 * **GetSubscribersFromSegment**
 >  *Definition:*
 > ```csharp
 > public object GetSubscribersFromSegment(int segmentid = 0, bool countonly = false, bool activeonly = true, int limit = 100, int offset = 0)
 >```
-
-<br />
+<br>
 
 * **ViewNewsletter**
 >  *Definition:*
 > ```csharp
 > public object ViewNewsletter(int newsletterid = 0)
 >```
-
-<br />
+<br>
 
 * **GetTriggersForSegment**
 >  *Definition:*
 > ```csharp
 > public object GetTriggersForSegment(int segmentid = 0)
 >```
-
-<br />
+<br>
