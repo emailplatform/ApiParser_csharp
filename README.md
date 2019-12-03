@@ -17,8 +17,8 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 2. Call method from ApiParser
 ```csharp
 int newsletterid = 19;
-int[] listids = new int[]{10,12};
-string responce = parser.ScheduleSendNewsletterToLists(newsletterid, 0, listids);
+int subscriberid = 120;
+string responce = parser.SendNewsletter(newsletterid, subscriberid);
 ```
 <hr><br />
 
