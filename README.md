@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.10
+Install-Package ApiParser -Version 1.2.12
 ```
 <hr><br />
 
@@ -16,13 +16,37 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
 ```csharp
-int newsletterid = 19;
-int[] listids = new int[]{10,12};
-string responce = parser.ScheduleSendNewsletterToLists(newsletterid, 0, listids);
+int listid = 19;
+int[] customFields = new int[]{10,12};
+string responce = parser.AddCustomFieldsToList(listid, customFields);
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.11** and **v1.2.12**_ 
+#### New method:
+
+* **AddCustomFieldsToList**
+> ```csharp
+> public string AddCustomFieldsToList(int listid = 0, int[] customFields = null)
+>```
+<br>
+
+### _Differences between **v1.2.10** and **v1.2.11**_ 
+#### Method definition changed:
+
+* **SendNewsletter**
+>  *Previous:*
+> ```csharp
+> public string SendNewsletter(int newsletterid = 0, int subscriberid = 0, string email = "", string senderEmail = "", string senderName = "", string replyEmail = "")
+>```
+>  *Now:*
+> ```csharp
+>public string SendNewsletter(int newsletterid = 0, int subscriberid = 0, string email = "", string senderEmail = "", string senderName = "", string replyEmail = "", string callbackUrl = "", bool reloadFeed = false)
+>```
+> * **Added:** callbackUrl and reloadFeed
+<br>
 
 ### _Differences between **v1.2.9** and **v1.2.10**_ 
 #### New methods:
