@@ -43,6 +43,7 @@ string response = parser.CreateSegment("new segment", allRules);
 
 ## Changelog:
 
+
 ### _Differences between **v1.2.12** and **v1.2.13**_ 
 #### New method:
 
@@ -60,6 +61,7 @@ string response = parser.CreateSegment("new segment", allRules);
 > public string AddCustomFieldsToList(int listid = 0, int[] customFields = null)
 >```
 <br>
+
 
 ### _Differences between **v1.2.10** and **v1.2.11**_ 
 #### Method definition changed:
