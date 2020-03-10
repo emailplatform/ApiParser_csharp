@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.13
+Install-Package ApiParser -Version 1.2.14
 ```
 <hr><br />
 
@@ -15,34 +15,57 @@ Install-Package ApiParser -Version 1.2.13
 ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 ```
 2. Call method from ApiParser
+
 ```csharp
-Dictionary<string, object> allRules = new Dictionary<string, object>();
+int newsletterid = 44691;
+float hours = 0;
+bool saveSnapshots = false;
+bool reloadFeed = true;
 
-Dictionary<string, object>[] segments = new Dictionary<string, object>[1];
-Dictionary<string, object> segment = new Dictionary<string, object>();
-
-Dictionary<string, object>[] rules = new Dictionary<string, object>[1];
-Dictionary<string, object> rule = new Dictionary<string, object>();
-
-rule.Add("ruleName", "emailaddress");
-rule.Add("ruleOperator", "=");
-rule.Add("ruleValue", "leonid@emailplatform.com");
-
-rules[0] = rule;
-
-segment.Add("listids", new int[] { 189 });
-segment.Add("rules", rules);
-
-segments[0] = segment;
-
-allRules.Add("Rules", segments);
-
-string response = parser.CreateSegment("new segment", allRules);
+string response = parser.ScheduleSendNewsletter(newsletterid, hours, saveSnapshots, reloadFeed);
 ```
 <hr><br />
 
 ## Changelog:
 
+### _Differences between **v1.2.13** and **v1.2.14**_ 
+#### Method definition changed:
+
+* **ScheduleSendNewsletter**
+>  *Previous:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true)
+>```
+>  *Now:*
+> ```csharp
+> public string ScheduleSendNewsletter(int campaignid = 0, float hours = 0, bool saveSnapshots = true, bool reloadFeed = true)
+>```
+> * **Added:** reloadFeed
+<br>
+
+* **ScheduleSendNewsletterToLists**
+>  *Previous:*
+> ```csharp
+> public function ScheduleSendNewsletterToLists(int campaignid = 0, float timeToSend = 0, int[] listids = null)
+>```
+>  *Now:*
+> ```csharp
+> public function ScheduleSendNewsletterToLists(int campaignid = 0, float timeToSend = 0, int[] listids = null, bool saveSnapshots = true, bool reloadFeed = true)
+>```
+> * **Added:** saveSnapshots and reloadFeed
+<br>
+
+* **ScheduleSendNewsletterToSegments**
+>  *Previous:*
+> ```csharp
+> public function ScheduleSendNewsletterToSegments(int campaignid = 0, float timeToSend = 0, int[] segmentids = null)
+>```
+>  *Now:*
+> ```csharp
+> public function ScheduleSendNewsletterToSegments(int campaignid = 0, float timeToSend = 0, int[] segmentids = null, bool saveSnapshots = true, bool reloadFeed = true)
+>```
+> * **Added:** saveSnapshots and reloadFeed
+<br>
 
 ### _Differences between **v1.2.12** and **v1.2.13**_ 
 #### New method:
