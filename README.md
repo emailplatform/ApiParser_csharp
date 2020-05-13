@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.14.1
+Install-Package ApiParser -Version 1.2.14.2
 ```
 <hr><br />
 
@@ -17,13 +17,22 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 2. Call method from ApiParser
 
 ```csharp
-int fieldid = 57;
+int listid = 57;
 
-string response = parser.GetSampleDataForOTM(fieldid); 
+object response = parser.GetStatids(listid); 
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.14.1** and **v1.2.14.2**_ 
+#### Method result changed:
+
+* **GetStatids**
+> ```csharp
+> public object GetStatids(int listid = 0, int segmentid = 0, int campaignid = 0, string from = "", string to = "", int limit = 100, int offset = 0)
+>```
+<br>
 
 ### _Differences between **v1.2.14** and **v1.2.14.1**_ 
 #### New method:
