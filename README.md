@@ -29,6 +29,18 @@ object response = parser.ScheduleSendNewsletter(campaignid, hours, saveSnapshots
 
 ## Changelog:
 
+### _Differences between **v1.2.15** and **v1.2.16**_ 
+<br>
+
+#### Method definition changed:
+
+* **GetSubscriberDetails**
+>  *Previous:*
+`listid was required.`
+
+>  *Now:*
+`listid is not required if subscriberid is specified.`
+
 ### _Differences between **v1.2.14.2** and **v1.2.15**_ 
 #### New methods:
 
