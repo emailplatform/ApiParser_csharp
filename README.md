@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.15
+Install-Package ApiParser -Version 1.2.16
 ```
 <hr><br />
 
@@ -28,6 +28,18 @@ object response = parser.ScheduleSendNewsletter(campaignid, hours, saveSnapshots
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.15** and **v1.2.16**_ 
+<br>
+
+#### Method definition changed:
+
+* **GetSubscriberDetails**
+>  *Previous:*
+`listid was required.`
+
+>  *Now:*
+`listid is not required if subscriberid is specified.`
 
 ### _Differences between **v1.2.14.2** and **v1.2.15**_ 
 #### New methods:
