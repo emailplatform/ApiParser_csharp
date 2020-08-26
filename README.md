@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.16
+Install-Package ApiParser -Version 1.2.17
 ```
 <hr><br />
 
@@ -28,6 +28,23 @@ object response = parser.ScheduleSendNewsletter(campaignid, hours, saveSnapshots
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.16** and **v1.2.17**_ 
+<br>
+
+#### Method definition changed:
+
+* **UpdateOTMDocument**
+>  *Previous:*
+> ```csharp
+> public string UpdateOTMDocument(int subscriberid = 0, int fieldid = 0, Dictionary<string, object> values = null, string path = "");
+>```
+>  *Now:*
+> ```csharp
+> public string UpdateOTMDocument(int subscriberid = 0, int listid = 0, string emailaddress = "", string mobileNumber = "", string mobilePrefix = "", int fieldid = 0, Dictionary<string, object> values = null, string path = "");
+>```
+> * **Added:** listid, emailaddress, mobileNumber and mobilePrefix.
+<br>
 
 ### _Differences between **v1.2.15** and **v1.2.16**_ 
 <br>
