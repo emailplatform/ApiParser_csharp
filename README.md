@@ -28,7 +28,7 @@ object response = parser.RemoveOTMDocument(subscriberid, fieldid, path, index);
 
 ## Changelog:
 
-### _Differences between **v1.2.17** and **v1.2.18**_ 
+### _Differences between **v1.2.18** and **v1.2.20**_ 
 #### New method:
 
 * **RemoveOTMDocument**
