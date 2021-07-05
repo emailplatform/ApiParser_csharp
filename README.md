@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.18
+Install-Package ApiParser -Version 1.2.20
 ```
 <hr><br />
 
@@ -17,16 +17,25 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 2. Call method from ApiParser
 
 ```csharp
-string accountName = "name of account";
-string accountPassword = "password of account";
-string ownerEmail = "info@example.com";
-string[] allowedDomains = new string[] { "domain" };
+int subscriberid = 478123;
+int fieldid = 90;
+string path = "Movies";
+int index = 1;
 
-object response = parser.CreateSubAccount(accountName, accountPassword, ownerEmail, allowedDomains);
+object response = parser.RemoveOTMDocument(subscriberid, fieldid, path, index);
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.17** and **v1.2.18**_ 
+#### New method:
+
+* **RemoveOTMDocument**
+> ```csharp
+> public string RemoveOTMDocument(int subscriberid = 0, int fieldid = 0, string path = "", int index = 0)
+>```
+<br>
 
 ### _Differences between **v1.2.17** and **v1.2.18**_ 
 #### New methods:
