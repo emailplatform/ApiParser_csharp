@@ -5,7 +5,7 @@ C# class for using our company's API as part of the subscription.
 ## Installation
 Install the [NuGet package](https://www.nuget.org/packages/ApiParser) from the package manager console:
 ```c#
-Install-Package ApiParser -Version 1.2.20
+Install-Package ApiParser -Version 1.2.21
 ```
 <hr><br />
 
@@ -17,16 +17,39 @@ ApiParser parser = new ApiParser("API_USERNAME", "API_TOKEN", "json");
 2. Call method from ApiParser
 
 ```csharp
-int subscriberid = 478123;
-int fieldid = 90;
-string path = "Movies";
-int index = 1;
+int campaignid = 278;
+float hours = 1;
 
-object response = parser.RemoveOTMDocument(subscriberid, fieldid, path, index);
+object response = parser.ScheduleSendSMS(campaignid, hours);
 ```
 <hr><br />
 
 ## Changelog:
+
+### _Differences between **v1.2.20** and **v1.2.21**_ 
+<br>
+
+#### Method definition changed:
+
+* **ScheduleSendSMS**
+>  *Previous:*
+> ```csharp
+> public string ScheduleSendSMS(int campaignid = 0, int[] lists = null, float hours = 0)
+>```
+>  *Now:*
+> ```csharp
+> public string ScheduleSendSMS(int campaignid = 0, float hours = 0)
+>```
+> * **Removed:** lists.
+<br>
+
+#### Removed method:
+
+* **SendSMS**
+> ```csharp
+> public string SendSMS(int campaignid = 0, string subject = "", string text = "", int subscriberid = 0, int listid = 0, string mobile = "", string mobilePrefix = "")
+>```
+<br>
 
 ### _Differences between **v1.2.18** and **v1.2.20**_ 
 #### New method:
